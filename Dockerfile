@@ -4,7 +4,9 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends git \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
-  
+
+RUN sudo chmod 666 /usr/bin/git
+
  # Add libraries
  # COPY requirements.txt .
  # RUN pip3 install --no-cache-dir -r requirements.txt
