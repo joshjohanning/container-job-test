@@ -5,17 +5,16 @@ on:
 
 jobs:
   container:
-    runs-on: [self-hosted, azure]
+    # runs-on: [self-hosted, azure]
+    runs-on: ubunut-latest
     container:
       # image: 'ubuntu:latest'
       image: 'ghcr.io/joshjohanning-org/container-job-test:13' # 8 works, 9 doesn,t, 3 has USER 1001, 4 does not
       credentials:
          username: ${{ github.actor }}
          password: ${{ secrets.GITHUB_TOKEN }}
-      options: --user 1001
 
     steps:
-    - run: chown 1001 -R /__w/
     - uses: actions/checkout@main
     - run: ls
     
