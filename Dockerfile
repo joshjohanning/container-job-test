@@ -5,7 +5,7 @@ RUN apt-get update \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
 
-RUN chmod 666 /usr/bin/git
+RUN chmod 775 /usr/bin/git
 
  # Add libraries
  # COPY requirements.txt .
