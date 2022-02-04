@@ -17,5 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - run: ls
+    - run: |
+        touch file.txt
+        git add .
+        git commit -m "adding file"
+        git push
     
-
