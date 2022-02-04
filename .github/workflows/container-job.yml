@@ -2,6 +2,8 @@ name: Container Job
 
 on:
   push:
+    branches:
+      main
 
 jobs:
   regularjob:
@@ -17,7 +19,7 @@ jobs:
       # image: 'ubuntu:latest'
       image: 'ghcr.io/joshjohanning-org/container-job-test:17' # 8 works, 9 doesn,t, 3 has USER 1001, 4 does not..
       credentials:
-         username: ${{ github.actor }}
+         username: ${{ github.ref }}
          password: ${{ secrets.GITHUB_TOKEN }}
       env: 
         actor: ${{ github.actor }}
@@ -32,4 +34,9 @@ jobs:
       run: echo "${{ github.actor }}"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
+    - run: | 
+        echo ${{ github.sha }}
+        curl -sLX GET https://api.github.com/repos/${{ github.repository}}/commits/${{ github.sha }} \
+          --header "Accept: application/vnd.github.v3+json" \
+          --header "Authorization: Bearer ${{ secrets.github_token }}"
         
