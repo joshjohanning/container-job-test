@@ -9,11 +9,11 @@ RUN apt-get update \
  # COPY requirements.txt .
  # RUN pip3 install --no-cache-dir -r requirements.txt
  
- RUN mkdir /usr/src/app /usr/src/cert && chmod -R 777 /usr/src/app /usr/src/cert
- ENV PYTHONPATH /usr/src/app
- ENV PATH="/usr/src/app:$PATH"
+RUN mkdir /usr/src/app /usr/src/cert && chmod -R 777 /usr/src/app /usr/src/cert
+ENV PYTHONPATH /usr/src/app
+ENV PATH="/usr/src/app:$PATH"
  
- RUN chmod -R 777 /usr/src/app
- # set as a non root user
- USER 1001
+RUN chmod -R 777 /usr/src/app
+# set as a non root user
+USER 1001
  
