@@ -5,7 +5,7 @@ on:
 
 jobs:
   container:
-    runs-on: ubuntu-18.04
+    runs-on: [self-hosted, azure]
     container:
       image: 'ghcr.io/joshjohanning-org/container-job-test:3'
       credentials:
