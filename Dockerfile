@@ -17,5 +17,5 @@ ENV PATH="/usr/src/app:$PATH"
  
 RUN chmod -R 777 /usr/src/app
 # set as a non root user
-# USER 1001
+USER 1001
  
