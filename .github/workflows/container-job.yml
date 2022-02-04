@@ -7,7 +7,7 @@ jobs:
   container:
     runs-on: [self-hosted, azure]
     container:
-      image: 'ghcr.io/joshjohanning-org/container-job-test:3'
+      image: 'ghcr.io/joshjohanning-org/container-job-test:4' # 3 has USER 1001, 4 does not 
       credentials:
          username: ${{ github.actor }}
          password: ${{ secrets.GITHUB_TOKEN }}
