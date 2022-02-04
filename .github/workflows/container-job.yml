@@ -15,6 +15,7 @@ jobs:
       issues: write
       pull-requests: write
       packages: read
+      contents: read
 
     steps:
     - uses: actions/checkout@main
