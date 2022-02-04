@@ -15,6 +15,7 @@ jobs:
       options: --user 1001
 
     steps:
+    - run: chown 1001 -R /__w/
     - uses: actions/checkout@main
     - run: ls
     
