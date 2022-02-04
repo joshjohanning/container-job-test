@@ -1,0 +1,26 @@
+# This workflow warns and then closes issues and PRs that have had no activity for a specified amount of time.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/actions/stale
+name: Mark stale issues and pull requests
+
+on:
+  push:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/joshjohanning-org/container-job-test:sha256-1d28680218efc92e45f55e2611bad2c5ba2cd11df52b401fe06ce576e7a8ba1f.sig
+      credentials:
+         username: ${{ github.actor }}
+         password: ${{ secrets.ghcr_token }}
+    permissions:
+      issues: write
+      pull-requests: write
+      packages: read
+
+    steps:
+    - name: actions/checkout@main
+    
