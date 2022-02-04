@@ -11,6 +11,11 @@ jobs:
     steps:
     - run: echo "${{ github.actor }}"
     - run: echo "${{ secrets.TEST_SECRET }}"
+    - run: | 
+        echo ${{ github.sha }}
+        curl -sLX GET https://api.github.com/repos/${{ github.repository}}/commits/${{ github.sha }} \
+          --header "Accept: application/vnd.github.v3+json" \
+          --header "Authorization: Bearer ${{ secrets.github_token }}"
     
   container:
     # runs-on: [self-hosted, azure]
@@ -34,9 +39,5 @@ jobs:
       run: echo "${{ github.actor }}"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
-    - run: | 
-        echo ${{ github.sha }}
-        curl -sLX GET https://api.github.com/repos/${{ github.repository}}/commits/${{ github.sha }} \
-          --header "Accept: application/vnd.github.v3+json" \
-          --header "Authorization: Bearer ${{ secrets.github_token }}"
+
         
