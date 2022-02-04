@@ -6,6 +6,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN chmod 775 /usr/bin/git
+RUN mkdir /__w/ /__e/ && chown -R 1001 /__w/ /__e/
 
  # Add libraries
  # COPY requirements.txt .
