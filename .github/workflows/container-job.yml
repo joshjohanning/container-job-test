@@ -7,7 +7,7 @@ jobs:
   container:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/joshjohanning-org/container-job-test:sha256-2a36594d34eb4b97f3de3092172868430067d22be3ea685383649249f65bbf55.sig
+      image: 'ghcr.io/joshjohanning-org/container-job-test:3'
       credentials:
          username: ${{ github.actor }}
          password: ${{ secrets.GITHUB_TOKEN }}
