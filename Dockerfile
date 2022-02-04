@@ -5,8 +5,6 @@ RUN apt-get update \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
 
-# RUN chmod 666 /usr/bin/git
-
  # Add libraries
  # COPY requirements.txt .
  # RUN pip3 install --no-cache-dir -r requirements.txt
@@ -19,3 +17,4 @@ RUN chmod -R 777 /usr/src/app
 # set as a non root user
 USER 1001
  
+# on self hosted, run: 'sudo chmod -R 777 _work' on the actions-runner work directory
