@@ -5,8 +5,8 @@ on:
 
 jobs:
   container:
-    runs-on: [self-hosted, azure]
-    # runs-on: ubuntu-latest
+    # runs-on: [self-hosted, azure]
+    runs-on: ubuntu-latest
     container:
       # image: 'ubuntu:latest'
       image: 'ghcr.io/joshjohanning-org/container-job-test:17' # 8 works, 9 doesn,t, 3 has USER 1001, 4 does not..
@@ -18,10 +18,5 @@ jobs:
     - uses: actions/checkout@main
     - run: ls
     - run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "GitHub Actions"
-        touch file.txt
-        git add .
-        git commit -m "adding file"
-        git push
-    
+        echo "${{ github.event.comment.issue_url }}"
+        
