@@ -17,5 +17,5 @@ jobs:
       packages: read
 
     steps:
-    - name: actions/checkout@main
+    - uses: actions/checkout@main
     
