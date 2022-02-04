@@ -5,8 +5,8 @@ on:
 
 jobs:
   container:
-    runs-on: [self-hosted, azure]
-    # runs-on: ubuntu-latest
+    # runs-on: [self-hosted, azure]
+    runs-on: ubuntu-latest
     container:
       # image: 'ubuntu:latest'
       image: 'ghcr.io/joshjohanning-org/container-job-test:17' # 8 works, 9 doesn,t, 3 has USER 1001, 4 does not..
