@@ -7,7 +7,7 @@ jobs:
   regularjob:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "${{ github.event.comment.issue_url }}"
+    - run: echo "${{ github.actor }}"
     
   container:
     # runs-on: [self-hosted, azure]
@@ -19,11 +19,14 @@ jobs:
          username: ${{ github.actor }}
          password: ${{ secrets.GITHUB_TOKEN }}
       env: 
-        issueUrl: ${{ github.event.comment.issue_url }}
+        actor: ${{ github.actor }}
 
     steps:
     - uses: actions/checkout@main
     - run: ls
-    - run: |
-        echo "$issueUrl"
+    - name: test1
+      run: |
+        echo "$actor"
+    - name: test2
+      run: echo ${{ github.actor }}
         
