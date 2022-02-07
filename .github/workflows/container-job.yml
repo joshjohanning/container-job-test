@@ -5,6 +5,9 @@ on:
     branches:
       main
 
+env:
+  test: value
+  
 jobs:
   regularjob:
     runs-on: ubuntu-latest
@@ -39,5 +42,7 @@ jobs:
       run: echo "${{ github.actor }}"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
+    - name: test env
+      run: echo "${{ TEST }}"
 
         
