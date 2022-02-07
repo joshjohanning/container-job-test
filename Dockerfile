@@ -4,10 +4,6 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends git \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/*
-
- # Add libraries
- # COPY requirements.txt .
- # RUN pip3 install --no-cache-dir -r requirements.txt
  
 RUN mkdir /usr/src/app /usr/src/cert && chmod -R 777 /usr/src/app /usr/src/cert
 ENV PYTHONPATH /usr/src/app
