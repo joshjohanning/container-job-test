@@ -14,3 +14,4 @@ RUN chmod -R 777 /usr/src/app
 USER 1001
  
 # on self hosted, run: 'sudo chmod -R 777 _work' on the actions-runner work directory
+
