@@ -42,7 +42,7 @@ jobs:
     - name: test github context
       run: echo "${{ github.actor }}"
     - name: test env job context
-      run: echo "testjob"
+      run: echo "$TESTJOB"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
     - name: test env
