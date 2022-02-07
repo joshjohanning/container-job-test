@@ -31,6 +31,7 @@ jobs:
          password: ${{ secrets.GITHUB_TOKEN }}
       env: 
         actor: ${{ github.actor }}
+        testjob: here is value
 
     steps:
     - uses: actions/checkout@main
@@ -38,11 +39,13 @@ jobs:
     - name: test1
       run: |
         echo "$actor"
-    - name: test2
+    - name: test github context
       run: echo "${{ github.actor }}"
+    - name: test env job context
+      run: echo "testjob"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
     - name: test env
-      run: echo "${{ TEST }}"
+      run: echo "$TEST"
 
         
