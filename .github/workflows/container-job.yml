@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       # image: 'ubuntu:latest'
-      image: 'ghcr.io/joshjohanning-org/container-job-test:17' # 8 works, 9 doesn,t, 3 has USER 1001, 4 does not..
+      image: 'ghcr.io/${{ github.repository }}:1'
       credentials:
          username: ${{ github.ref }}
          password: ${{ secrets.GITHUB_TOKEN }}
