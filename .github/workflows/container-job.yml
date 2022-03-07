@@ -35,18 +35,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@main
-    - run: ls
-    - name: test1
-      run: |
-        echo "$actor"
-    - name: test github context
+    - name: run ls
+      run: ls
+    # all of these below work
+    - name: print actor env var
+      run: echo "$actor"
+    - name: print directly github context
       run: echo "${{ github.actor }}"
-    - name: test secret
+    - name: print repo secret
       run: echo "${{ secrets.TEST_SECRET }}"
-    - name: test env job context
+    - name: print job env var
       run: echo "$testjob"
-    - name: test env in root
+    - name: print root env var
       run: echo "$test"
-    - name: test if condition with env
+    - name: condition with root env var
       if: ${{ env.test == 'value' }}
       run: echo "$test" 
