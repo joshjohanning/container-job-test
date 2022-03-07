@@ -48,5 +48,5 @@ jobs:
     - name: test env
       run: echo "$test"
     - name: test if condition with env
-      if: ${{ env.TEST == 'value' }}
+      if: ${{ env.test == 'value' }}
       run: echo "$test" 
