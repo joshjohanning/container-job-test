@@ -37,7 +37,7 @@ jobs:
     - uses: actions/checkout@main
     - name: run ls
       run: ls
-    # all of these below work
+    # all these below work
     - name: print actor env var
       run: echo "$actor"
     - name: print directly github context
