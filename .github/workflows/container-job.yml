@@ -41,11 +41,11 @@ jobs:
         echo "$actor"
     - name: test github context
       run: echo "${{ github.actor }}"
-    - name: test env job context
-      run: echo "$testjob"
     - name: test secret
       run: echo "${{ secrets.TEST_SECRET }}"
-    - name: test env
+    - name: test env job context
+      run: echo "$testjob"
+    - name: test env in root
       run: echo "$test"
     - name: test if condition with env
       if: ${{ env.test == 'value' }}
