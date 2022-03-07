@@ -47,5 +47,6 @@ jobs:
       run: echo "${{ secrets.TEST_SECRET }}"
     - name: test env
       run: echo "$test"
-
-        
+    - name: test if condition with env
+      if: ${{ env.TEST == 'value' }}
+      run: echo "$test" 
